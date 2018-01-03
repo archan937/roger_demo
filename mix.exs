@@ -20,7 +20,7 @@ defmodule RogerDemo.Mixfile do
   def application do
     [
       mod: {RogerDemo.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :roger]
     ]
   end
 
@@ -40,7 +40,10 @@ defmodule RogerDemo.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:poison, "~> 3.1", override: true},
+      {:recon, "2.3.2"},
+      {:roger, "~> 1.0"}
     ]
   end
 
