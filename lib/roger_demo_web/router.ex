@@ -17,6 +17,7 @@ defmodule RogerDemoWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    post "/", PageController, :create_or_update
   end
 
   # Other scopes may use custom stacks.
