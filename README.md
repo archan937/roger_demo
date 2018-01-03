@@ -1,11 +1,22 @@
 # RogerDemo
 
-To start your Phoenix server:
+Installation:
 
+  * Clone `git clone git@github.com:archan937/roger_demo.git`
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+  * Make sure you have RabbitMQ installed (`brew install rabbitmq`)
+
+Startup:
+
+  * Run `iex --name server@127.0.0.1 --cookie monster -S mix phx.server` in Terminal tab 1
+  * Run `iex --name watcher@127.0.0.1 --cookie monster -S mix` in Terminal tab 2
+
+```
+    Node.ping(:"server@127.0.0.1")
+    Roger.Info.partitions
+    Roger.Info.partitions[:"server@127.0.0.1"]
+```
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
