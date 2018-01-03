@@ -22,11 +22,15 @@ config :roger, Roger.AMQPClient,
   host: "localhost",
   port: 5672
 
+config :roger, Roger.Partition.Worker,
+  callbacks: RogerDemo.Worker.Callback
+
+if node() == :"server@127.0.0.1" do
+
 config :roger, :partitions,
   roger_demo_partition: [default: 10, other: 2]
 
-config :roger, Roger.Partition.Worker,
-  callbacks: RogerDemo.Worker.Callback
+end
 
 # Configures Elixir's Logger
 config :logger, :console,
