@@ -4,6 +4,7 @@ defmodule RogerDemo.Mixfile do
   def project do
     [
       app: :roger_demo,
+      default_task: "phx.server",
       version: "0.0.1",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
@@ -43,7 +44,8 @@ defmodule RogerDemo.Mixfile do
       {:cowboy, "~> 1.0"},
       {:poison, "~> 3.1", override: true},
       {:recon, "2.3.2"},
-      {:roger, "~> 1.0"}
+      {:roger, "~> 1.3"},
+      {:roger_ui, "~> 0.1", path: "../roger_ui"}
     ]
   end
 

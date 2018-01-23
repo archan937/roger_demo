@@ -9,8 +9,8 @@ Installation:
 
 Startup:
 
-  * Run `iex --name server@127.0.0.1 --cookie monster -S mix phx.server` in Terminal tab 1
-  * Run `iex --name watcher@127.0.0.1 --cookie monster -S mix` in Terminal tab 2
+  * Run `iex --name server@127.0.0.1 --cookie monster -S mix` in Terminal tab 1
+  * Run `iex --name watcher@127.0.0.1 --cookie monster -S mix run` in Terminal tab 2
 
 ```
     Node.ping(:"server@127.0.0.1")

@@ -27,8 +27,13 @@ config :roger, Roger.Partition.Worker,
 
 if node() == :"server@127.0.0.1" do
 
+config :roger_ui, :server, true
 config :roger, :partitions,
   roger_demo_partition: [default: 10, other: 2]
+
+else
+
+config :roger_ui, :server, false
 
 end
 
@@ -40,3 +45,9 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
+
+if node() != :"server@127.0.0.1" do
+
+:pong = Node.ping(:"server@127.0.0.1")
+
+end

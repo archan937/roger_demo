@@ -6,7 +6,7 @@ defmodule RogerDemoWeb.PageController do
   end
 
   def create_or_update(conn, %{"email" => email} = params) when email != "" do
-    Enum.each(1..10000, fn(i) ->
+    Enum.each(1..1000, fn(i) ->
       attrs =
         params
         |> Map.take(~w(name email bio))

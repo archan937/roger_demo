@@ -3,7 +3,7 @@ defmodule RogerDemo.Job.CreateUpdateUser do
   alias RogerDemo.{Repo, User}
 
   def perform(attrs) do
-    Process.sleep(10)
+    Process.sleep(1000)
     case Repo.get_by(User, email: attrs["email"]) do
       nil -> %User{}
       user -> user
