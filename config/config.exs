@@ -48,6 +48,6 @@ import_config "#{Mix.env}.exs"
 
 if node() != :"server@127.0.0.1" do
 
-:pong = Node.ping(:"server@127.0.0.1")
+Node.ping(:"server@127.0.0.1")
 
 end
